@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <h1>
+            Creative Coding Using JavaScript
+        </h1>
+    </body>
+    <canvas width="600" height="600"></canvas>
+    <style>
+        body{
+            margin: 0;
+            text-align: center;
+        }
+        canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 800px;
+    }
+    </style>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+
+        for(let i = 0 ; i < 5 ; i++){
+            for(let j = 0 ; j < 5 ;j++){
+                let width = 60;
+                let height =60;
+                let gap = 20;
+                let x = 100 + (width+gap)*i;
+                let y = 100 + (height+gap)*j;
+                context.beginPath();
+                context.rect(x,y,width,height);
+                context.lineWidth = 4;
+                context.stroke();
+
+                context.beginPath();
+                context.rect(x+8,y+8,width-16,height-16);
+                context.lineWidth = 4;
+                context.stroke();
+            }
+        }
+    </script>
+</html>
